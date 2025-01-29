@@ -3,8 +3,8 @@
   "version": "0.6.0",
   "scripts": {
     "_phase:bundle": "rushx bundle",
-    "format": "",
-    "_phase:format": "",
+    "format": "echo 'no format'",
+    "_phase:format": "echo 'no format'",
     "_phase:docker-build": "rushx docker:build",
     "_phase:docker-staging": "rushx docker:staging",
     "docker:abuild": "docker build -t hardcoreeng/green . --platform=linux/arm64 && ../../common/scripts/docker_tag_push.sh hardcoreeng/green",
