@@ -1,0 +1,28 @@
+{
+  "name": "@hcengineering/green",
+  "version": "0.6.0",
+  "scripts": {
+    "_phase:bundle": "rushx bundle",
+    "format": "",
+    "_phase:format": "",
+    "_phase:docker-build": "rushx docker:build",
+    "_phase:docker-staging": "rushx docker:staging",
+    "docker:abuild": "docker build -t hardcoreeng/green . --platform=linux/arm64 && ../../common/scripts/docker_tag_push.sh hardcoreeng/green",
+    "bundle": "bun build --target=bun --define 'VERISON=$(node ../../common/scripts/show_version.js)' --external=snappy ./src/index.ts --outdir ./build",
+    "docker:build": "docker build -t hardcoreeng/green .",
+    "docker:push": "docker push hardcoreeng/green",
+    "run": "bun run ./src/index.ts --watch"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "snappy": "^7.2.2"
+  },
+  "module": "src/index.ts",
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.7.3",
+    "bun": "^1.2.1"
+  }
+}

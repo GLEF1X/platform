@@ -2,7 +2,7 @@
 name = "cloud-transactor"
 main = "src/index.ts"
 compatibility_date = "2024-09-23"
-compatibility_flags = ["nodejs_compat_v2"]
+compatibility_flags = ["nodejs_compat"]
 keep_vars = true
 
 [observability.logs]
